@@ -2,9 +2,10 @@ import { Module } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UserController } from './user.controller';
 import { DataSourceModule } from '../common/data-source.module'; // Import the DataSourceModule
+// import { AccountModule } from 'src/account/account.module';
 
 @Module({
-  imports: [DataSourceModule], // Import DataSourceModule to use DataSourceManager
+  // imports: [DataSourceModule], // Import DataSourceModule to use DataSourceManager
   controllers: [UserController],
   providers: [UserService],
   exports: [UserService], // Export UserService if needed in other modules

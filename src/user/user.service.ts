@@ -6,7 +6,7 @@ import { User } from './user.entity';
 
 @Injectable()
 export class UserService {
-  constructor(@Inject(DataSourceManager) private readonly dataSourceManager: DataSourceManager) {}
+  // constructor(@Inject(DataSourceManager) private readonly dataSourceManager: DataSourceManager) {}
 
   private getDataSourceFromRequest(req: Request): DataSource {
     return (req as any).dataSource;

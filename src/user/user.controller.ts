@@ -9,11 +9,15 @@ export class UserController {
 
   @Get()
   async findAll(@Req() req: Request): Promise<User[]> {
+    console.log('Controller 1');
     return this.userService.findAll(req);
   }
 
   @Post()
-  async createUser(@Req() req: Request, @Body() userData: Partial<User>): Promise<User> {
+  async createUser(
+    @Req() req: Request,
+    @Body() userData: Partial<User>,
+  ): Promise<User> {
     return this.userService.createUser(req, userData);
   }
 

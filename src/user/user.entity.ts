@@ -1,13 +1,17 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { Account } from 'src/account/account.entity';
 
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
-  id: number;
+  user_id: number;
 
-  @Column()
-  name: string;
+  @Column({ length: 50 })
+  username: string;
 
-  @Column()
+  @Column({ length: 100, unique: true })
   email: string;
+
+  @OneToMany(() => Account, (account) => account.user)
+  accounts: Account[];
 }

@@ -19,9 +19,10 @@ export class DataSourceManager {
       database: tenantId,
       entities: [__dirname + '/../**/*.entity{.ts,.js}'],
       synchronize: true,
+      logging: ['query', 'error'],
       extra: {
         max: 10, // maximum number of connections in the pool
-        min: 2,  // minimum number of connections in the pool
+        min: 2, // minimum number of connections in the pool
         idleTimeoutMillis: 30000, // how long a connection can be idle before being released
       },
     };
